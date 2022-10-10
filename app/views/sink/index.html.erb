@@ -1,9 +1,43 @@
-<div>
-  <a href="#"
-     data-reflex="click->Counter#increment"
-     data-step="1"
-     data-count="<%= @count.to_i %>">
-    Increment <%= @count.to_i %>
-  </a>
+<div class="flex flex-col	 w-screen">
+
+  <div class="w-full h-10 flex justify-center align-center">
+    <h3>Counter</h3>
+  </div>
+
+  <div class="shadow-sm w-full h-20 border-4 flex justify-between
+              p-2 border-slate-100 rounded-md">
+
+    <div>
+      <button
+        class="h-full w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        data-controller="counter"
+        data-action="click->counter#step"
+        data-step="1"
+        data-count="<%= @count.to_i %>">
+        +
+      </button>
+
+      <button
+        class="h-full w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        data-controller="counter"
+        data-action="click->counter#step"
+        data-step="-1"
+        data-count="<%= @count.to_i %>"
+      >
+        -
+      </button>
+    </div>
+
+    <div class="h-full w-20 flex justify-center items-center">
+      <%= @count.to_i %>
+    </div>
+  </div>
+
+  <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700">
+
 </div>
+
+
+
+
 
